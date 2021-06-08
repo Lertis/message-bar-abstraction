@@ -26,7 +26,7 @@ class ServerLogger implements MessageLogger {
 	imports: [
 		BrowserModule,
 		HttpClientModule,
-		CentralBarMessageModule
+		CentralBarMessageModule.useDefault()
 	],
 	providers: [
 		ApiService,
