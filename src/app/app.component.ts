@@ -12,8 +12,7 @@ import { ApiService } from "./services/api/api.service";
 export class AppComponent implements OnDestroy {
 	private readonly destroy$ = new Subject<void>();
 
-	constructor(private readonly api: ApiService,
-		@Inject(MOCK_CODES) private readonly mockCodesUrl: string) {}
+	constructor(private readonly api: ApiService, @Inject(MOCK_CODES) private readonly mockCodesUrl: string) { }
 
 	getMessage(code: number) {
 		this.api.get(`${this.mockCodesUrl}/${code}`).pipe(takeUntil(this.destroy$)).subscribe();

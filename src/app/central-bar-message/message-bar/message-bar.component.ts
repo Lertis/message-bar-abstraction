@@ -1,12 +1,12 @@
-import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild } from "@angular/core";
 import { Observable } from "rxjs";
 import { AbstractCentralMessage } from "../abstract-cental-message";
-import { Message, MessageLogger, MessageType } from "../central-message.types";
+import { Message, MessageType } from "../central-message.types";
 
 @Component({
-	selector: 'app-message-bar',
-	templateUrl: './message-bar.component.html',
-	styleUrls: ['./message-bar.component.scss']
+	selector: "app-message-bar",
+	templateUrl: "./message-bar.component.html",
+	styleUrls: ["./message-bar.component.scss"]
 })
 export class MessageBarComponent implements OnInit {
 

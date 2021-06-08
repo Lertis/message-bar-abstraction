@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpInterceptor, HttpEvent, HttpHandler, HttpRequest, HttpResponse } from "@angular/common/http";
 import { Observable, of } from "rxjs";
-import { catchError, tap } from "rxjs/operators"
+import { catchError, tap } from "rxjs/operators";
 import { AbstractCentralMessage } from "./abstract-cental-message";
 import { MessageType } from "./central-message.types";
 import { SuccessStatuses } from "../configs/code.statuses";

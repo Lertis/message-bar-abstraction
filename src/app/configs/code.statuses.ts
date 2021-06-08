@@ -61,6 +61,6 @@ ErrorStatuses
 	.set(510, "Not Extended")
 	.set(511, "Network Authentication Required")
 	.set(598, "Network Read Timeout Error")
-	.set(599, "Network Connect Timeout Error")
+	.set(599, "Network Connect Timeout Error");
 
 export { SuccessStatuses, WarningStatuses, ErrorStatuses };
