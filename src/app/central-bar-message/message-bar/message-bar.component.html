@@ -1,0 +1,8 @@
+<ng-container *ngFor="let message of messages$ | async; template: defaultTemplate"></ng-container>
+
+<ng-template let-message #defaultTemplate>
+	<div class="alert alert-danger alert-dismissible fade show">
+		{{ message.message }}
+		<button (click)="remove(message)"><span>&times;</span></button>
+	</div>
+</ng-template>
