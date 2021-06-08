@@ -11,7 +11,6 @@ import { AbstractCentralMessage } from "./abstract-cental-message";
 	imports: [CommonModule],
 	exports: [MessageBarComponent],
 	providers: [
-		MessageService,
 		{
 			provide: AbstractCentralMessage,
 			useClass: MessageService

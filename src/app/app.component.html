@@ -1,5 +1,8 @@
-<button (click)="getMessage(200)"><span>Get Success</span></button>
-<button (click)="getMessage(400)"><span>Get Warning</span></button>
-<button (click)="getMessage(500)"><span>Get Error</span></button>
+<div class="request-btns">
+	<button class="btn-request success-request" (click)="getMessage(200)"><span>Get Success</span></button>
+	<button class="btn-request warning-request" (click)="getMessage(400)"><span>Get Warning</span></button>
+	<button class="btn-request error-request" (click)="getMessage(500)"><span>Get Error</span></button>
+</div>
+
 
 <app-message-bar></app-message-bar>

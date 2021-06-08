@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./variables.scss";
+
+.request-btns {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-items: center;
+	flex-direction: row;
+	flex: 1;
+}
+
+.btn-request {
+	border: none;
+	color: white;
+	padding: 0.5em 1.2em;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	border-radius: 0.2em;
+}
+
+.btn-request.success-request {
+	background-color: $success;
+}
+
+.btn-request.warning-request {
+	background-color: $warning;
+}
+
+.btn-request.error-request {
+	background-color: $error;
+}

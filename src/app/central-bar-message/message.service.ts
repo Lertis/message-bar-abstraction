@@ -23,6 +23,7 @@ export class MessageService extends AbstractCentralMessage {
 
 	removeMessage(message: Message): void {
 		const index = this._messagesQueue.indexOf(message);
-		this._messagesQueue = this._messagesQueue.splice(index, 1);
+		this._messagesQueue.splice(index, 1);
+		this._messages.next([...this._messagesQueue]);
 	}
 }

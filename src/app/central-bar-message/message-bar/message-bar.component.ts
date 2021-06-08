@@ -1,7 +1,7 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { Observable } from "rxjs";
 import { AbstractCentralMessage } from "../abstract-cental-message";
-import { Message } from "../central-message.types";
+import { Message, MessageLogger, MessageType } from "../central-message.types";
 
 @Component({
 	selector: 'app-message-bar',
@@ -18,14 +18,12 @@ export class MessageBarComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.messages$ = this.messageService.messages$;
-
-		this.messages$.subscribe( a => {
-			console.log(a);
-		})
 	}
 
 	remove(message: Message) {
 		this.messageService.removeMessage(message);
 	}
+
+	getClass = (message: Message) => message.type === MessageType.Success ? "success-banner" : "warning-error-banner";
 
 }
