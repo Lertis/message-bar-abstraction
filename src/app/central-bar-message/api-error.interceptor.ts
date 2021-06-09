@@ -14,7 +14,7 @@ export class ApiErrorInterceptor implements HttpInterceptor {
 	intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 		return next.handle(req).pipe(
 			tap((res: HttpResponse<any>) => {
-				if (res.hasOwnProperty("status") && SuccessStatuses.get(res.status)) {
+				if (res.hasOwnProperty("status") && SuccessStatuses.get(res.body?.statusCode)) {
 					this.messageService.setMessage({
 						type: MessageType.Success,
 						message: "Everything is fine!"

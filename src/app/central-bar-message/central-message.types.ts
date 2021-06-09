@@ -11,8 +11,8 @@ export interface MessageLogger {
 	log(message: Message): void;
 }
 
-export interface MessageConfig {
-	logApiErrors: boolean;
+export interface CentralMessageConfig {
+  enableLoggers: boolean
 }
 
 export const MESSAGE_LOGGERS = new InjectionToken<MessageLogger[]>("MESSAGE_LOGGERS");

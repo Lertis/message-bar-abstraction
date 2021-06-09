@@ -1,9 +1,10 @@
-import { ModuleWithProviders, NgModule, Optional, SkipSelf, Type } from "@angular/core";
+import { APP_INITIALIZER, ModuleWithProviders, NgModule, Optional, SkipSelf, Type } from "@angular/core";
 import { HTTP_INTERCEPTORS } from "@angular/common/http";
 import { CommonModule } from "@angular/common";
 import { MessageBarComponent } from "./message-bar/message-bar.component";
 import { ApiErrorInterceptor } from "./api-error.interceptor";
 import { MessageService } from "./message.service";
+import { CentralMessageConfigurationService } from "./central-message-configuration.service";
 import { AbstractCentralMessage } from "./abstract-cental-message";
 
 @NgModule({
@@ -11,11 +12,20 @@ import { AbstractCentralMessage } from "./abstract-cental-message";
 	imports: [CommonModule],
 	exports: [MessageBarComponent],
 	providers: [
+		CentralMessageConfigurationService,
 		{
 			provide: HTTP_INTERCEPTORS,
 			useClass: ApiErrorInterceptor,
 			multi: true
-		}
+		},
+		{
+			provide: APP_INITIALIZER,
+			useFactory: (configService: CentralMessageConfigurationService) => () => {
+				configService.loadConfiguration().toPromise()
+			},
+			deps: [CentralMessageConfigurationService],
+			multi: true
+		},
 	]
 })
 
